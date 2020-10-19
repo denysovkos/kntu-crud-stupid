@@ -8,8 +8,6 @@ const createDBConnection = require("../db");
 const productsHandler = require("./routeHandlers/products");
 
 module.exports = async () => {
-	// await fastify.register(require('fastify-express'))
-
 	const { models } = await createDBConnection();
 
 	// CRUD OPERATOR
