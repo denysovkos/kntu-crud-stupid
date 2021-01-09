@@ -30,7 +30,7 @@ module.exports = async () => {
 		prefix: '/',
 	});
 
-	fastify.listen(3000, (err, address) => {
+	fastify.listen(process.env.PORT || 80, (err, address) => {
 		if (err) {
 			fastify.log.error(err)
 			process.exit(1)
