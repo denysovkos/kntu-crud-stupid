@@ -8,6 +8,7 @@ const createDBConnection = require("../db");
 const productsHandler = require("./routeHandlers/products");
 
 const PORT = process.env.PORT || 5000;
+const HOST = process.env.YOUR_HOST || '0.0.0.0';
 
 module.exports = async () => {
 	const { models } = await createDBConnection();
@@ -32,7 +33,7 @@ module.exports = async () => {
 		prefix: '/',
 	});
 
-	fastify.listen(PORT, (err, address) => {
+	fastify.listen(PORT, HOST, (err, address) => {
 		if (err) {
 			fastify.log.error(err)
 			process.exit(1)
